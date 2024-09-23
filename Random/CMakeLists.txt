@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.12)
+project(Assignment2)
+add_executable(Assignment2 Assignment2.cpp)
+set_property(TARGET Assignment2 PROPERTY CXX_STANDARD 20)
+
+if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+target_compile_options(Assignment2 PRIVATE /W4 /permissive-)
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+target_compile_options(Assignment2 PRIVATE -Wall -Wextra -pedantic)
+elseif (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+target_compile_options(Assignment2 PRIVATE -Wall -Wextra -pedantic)
+endif()

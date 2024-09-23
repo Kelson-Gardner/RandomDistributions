@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		044722292CA085EE008BC257 /* Random */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Random; sourceTree = BUILT_PRODUCTS_DIR; };
 		0447222C2CA085EE008BC257 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		044722332CA0FDCB008BC257 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				0447222C2CA085EE008BC257 /* main.cpp */,
+				044722332CA0FDCB008BC257 /* CMakeLists.txt */,
 			);
 			path = Random;
 			sourceTree = "<group>";
