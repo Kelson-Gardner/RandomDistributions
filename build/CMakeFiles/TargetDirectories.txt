@@ -1,0 +1,4 @@
+/Users/Kelson/Desktop/CS 3460/Random/build/CMakeFiles/RandDistributions.dir
+/Users/Kelson/Desktop/CS 3460/Random/build/CMakeFiles/ClangFormat.dir
+/Users/Kelson/Desktop/CS 3460/Random/build/CMakeFiles/ALL_BUILD.dir
+/Users/Kelson/Desktop/CS 3460/Random/build/CMakeFiles/ZERO_CHECK.dir
