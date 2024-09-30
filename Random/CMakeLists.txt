@@ -5,10 +5,10 @@ set(UNIT_TEST_RUNNER UnitTestRunner)
 project(${PROJECT_NAME})
 
 set(HEADER_FILES distributions.hpp)
-set(SOURCE_FILES Assignment2.cpp distributions.cpp)
+set(SOURCE_FILES distributions.cpp)
 set(UNIT_TEST_FILES testDistributions.cpp)
 
-add_executable(${PROJECT_NAME} ${SOURCE_FILES} ${HEADER_FILES})
+add_executable(${PROJECT_NAME} ${SOURCE_FILES} ${HEADER_FILES} Assignment2.cpp)
 add_executable(${UNIT_TEST_RUNNER} ${SOURCE_FILES} ${HEADER_FILES} ${UNIT_TEST_FILES})
 
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 20)
@@ -39,7 +39,7 @@ target_compile_options(RandDistributions PRIVATE -Wall -Wextra -pedantic)
 endif()
 
 include(FetchContent)
-FecthContent_Declare(
+FetchContent_Declare(
     googletest
     GIT_REPOSITORY  https://github.com/google/googletest.git
     GIT_TAG         v1.15.0

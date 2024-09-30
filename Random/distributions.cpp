@@ -5,11 +5,11 @@
 //  Created by Kelson on 9/28/24.
 //
 
-#include "distributions.hpp"
 #include <format>
 #include <iostream>
 #include <random>
 #include <vector>
+#include "distributions.hpp"
 
 void plotDistribution(std::string title,
                       const std::vector<DistributionPair>& distribution,
@@ -26,7 +26,7 @@ void plotDistribution(std::string title,
     }
     for (DistributionPair pair : distribution)
     {
-        auto pairInfo = std::format("Range [ {:>2}, {:>2}] : ", pair.minValue,
+        auto pairInfo = std::format("Range [{:>3},{:>3}] : ", pair.minValue,
                                     pair.maxValue);
         std::cout << pairInfo;
         int range = static_cast<int>(
@@ -130,12 +130,13 @@ generatePoissonDistribution(std::uint32_t howMany, std::uint8_t howOften,
     std::poisson_distribution<int> dist(howOften);
     std::vector<DistributionPair> pairs;
     std::uint32_t index = 0;
-    std::uint32_t range = 1;
+    std::uint32_t range = (howOften * 3) / numberBins;
     for (std::uint8_t i = 0; i < numberBins; i++)
     {
         DistributionPair pair(index, index + range - 1);
         pairs.push_back(pair);
         index += range;
+
     }
 
     for (std::uint32_t i = 0; i < howMany; i++)
@@ -145,7 +146,7 @@ generatePoissonDistribution(std::uint32_t howMany, std::uint8_t howOften,
         {
             pairs[0].count += 1;
         }
-        else if (randomNumber > numberBins)
+        else if (randomNumber > howOften * 3 - 1)
         {
             pairs[pairs.size() - 1].count += 1;
         }
